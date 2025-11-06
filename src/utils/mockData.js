@@ -96,7 +96,7 @@ const resObj = [
                       "cuisines": [
                         "American"
                       ],
-                      "avgRating": 4.3,
+                      "avgRating": 3.5,
                       "parentId": "630",
                       "avgRatingString": "4.3",
                       "totalRatingsString": "20K+",
