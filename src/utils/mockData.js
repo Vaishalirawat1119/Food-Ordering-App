@@ -1,50 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client"
-
-const Header = () => {
-    return (
-        <div id="header">
-            <div id="logo-container">
-                <img className="logo" src="https://img.freepik.com/premium-vector/food-signal-online-food-ordering-logo-design_825834-7421.jpg"/>
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Contact us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    );
-};
-
-const RestaurantCard = ({ resData }) => {
-    const { name, cuisines, avgRating, costForTwo, sla, cloudinaryImageId } = resData.info;
-
-    return (
-        <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
-            <img
-                className="res-logo"
-                alt="rest-logo"
-                src={
-                    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-                    cloudinaryImageId
-                }
-            />
-
-            <div className="food-detail">
-                <h3 className="res-name">{name}</h3>
-                <h4>{cuisines.join(", ")}</h4>
-                <h4>{avgRating} ⭐</h4>
-                <h4>{costForTwo}</h4>
-                <h4>{sla.deliveryTime} min</h4>
-            </div>
-        </div>
-    );
-};
-
-
 const resObj = [
                   {
                     "info": {
@@ -1809,33 +1762,4 @@ const resObj = [
                   }
                 ];
 
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">
-                Search
-            </div>
-            <div className="restaurant-container">
-                {resObj.map((restaurant) => (
-                    <RestaurantCard 
-                        key={restaurant.info.id}
-                        resData={restaurant}
-                    />
-                ))}
-            </div>
-        </div>
-        
-    );
-};
-
-const AppLayout = () => {
-    return (
-        <div className="app">
-            <Header/>
-            <Body/>
-        </div>
-    )
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout/>)
+export default resObj;
