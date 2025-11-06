@@ -1,0 +1,57 @@
+#header{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    border: 1px solid black;
+}
+
+#logo-container{
+    height: 100px;
+    width: 100px;
+    /* background-color: red; */
+}
+
+.logo{
+    width: 100px;
+    /* background-color: yellow; */
+}
+
+.nav-items > ul{
+    display: flex;
+    font-size: 20px;
+    /* height: 100px; */
+    padding: 10px 20px;
+    margin: 30px;
+}
+
+.nav-items > ul > li{
+    list-style: none;
+    margin-right: 30px;
+}
+
+.search{
+    padding: 10px;
+}
+
+.restaurant-container{
+    /* background-color: black; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.res-card{
+    /* background-color: rgb(200, 199, 199); */
+    padding: 5px;
+    margin: 5px;
+    width: 200px;
+}
+
+.res-card:hover{
+    cursor: pointer;
+    border: 1px solid rgb(178, 174, 174);
+}
+
+.res-logo{
+    width: 100%;
+    height: 40%;
+}

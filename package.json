@@ -1,0 +1,30 @@
+{
+  "name": "food-ordering-app",
+  "version": "1.0.0",
+  "description": "Building a food ordering app",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vaishalirawat1119/Food-Ordering-App.git"
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "parcel"
+  ],
+  "author": "Vaishali Rawat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vaishalirawat1119/Food-Ordering-App/issues"
+  },
+  "homepage": "https://github.com/Vaishalirawat1119/Food-Ordering-App#readme",
+  "devDependencies": {
+    "parcel": "^2.16.1"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}
