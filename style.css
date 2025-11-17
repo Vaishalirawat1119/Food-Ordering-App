@@ -29,7 +29,12 @@
     margin-right: 30px;
 }
 
+.search{
+   padding: 0 8px;
+}
+
 .filter{
+    display: flex;
     padding: 10px;
 }
 
