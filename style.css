@@ -116,3 +116,14 @@
     height: 30px;
     background: rgb(194, 193, 193);
 }
+
+.login{
+    /* margin-top: 10px; */
+    /* padding: 0 10px; */
+    background: red;
+    border: none;
+    color: white;
+    width: 5rem;
+    height: 2rem;
+    font-size: 15px;
+}

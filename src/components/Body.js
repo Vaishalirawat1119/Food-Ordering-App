@@ -17,11 +17,7 @@ const Body = () => {
         setListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
 
-    if(listOfRestaurant.length === 0){
-        return <Shimmer/>;
-    }
-
-    return (
+    return listOfRestaurant.length === 0 ? <Shimmer/> : (
         <div className="body">
             <div className="filter" onClick={() => {
                 const filteredList = listOfRestaurant.filter((res) => res.info.avgRating > 4);
