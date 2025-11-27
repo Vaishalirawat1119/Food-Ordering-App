@@ -12,7 +12,7 @@ const RestaurantMenu = () => {
     }, []);
 
     const fetchMenu = async () => {
-        const data = await fetch("https://namastedev.com/api/v1/listRestaurantMenu/123456");
+        const data = await fetch( "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7041&lng=77.1025&restaurantId=");
         const json = await data.json();
         console.log(json);
         setResInfo(json.data);
