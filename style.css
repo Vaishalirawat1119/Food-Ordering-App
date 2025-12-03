@@ -132,3 +132,8 @@
     height: 2rem;
     font-size: 15px;
 }
+
+.user-card{
+    padding: 10px;
+    border: 1px solid black;
+}
