@@ -10,10 +10,24 @@ class UserClass extends React.Component{
             first : 0,
             second : 1
         }
+
+
+        console.log("Child Constructor");
+        console.log("Called (3)")
     }
+
+    componentDidMount(){
+        // Used for API calls, just like useEffect() in functional components
+        console.log("Child Component Did Mount");
+        console.log("Called (5)");
+    }
+
     render(){
         const {name} = this.props; //destructuring
         const {first, second} = this.state;
+
+        console.log("Child Render");
+        console.log("Called (4)");
         return(
             <div className="user-card">
                 <h1><u>It is a class-based component</u></h1>
