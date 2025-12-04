@@ -4,39 +4,36 @@ class UserClass extends React.Component{
     constructor(props){
         super(props);
 
-        // console.log(props);
-
         this.state = {
-            first : 0,
-            second : 1
+            userInfo : {
+                name : "Dummy Name",
+                location : "Dummy location",
+                bio : "Dummy Bio"
+            }
         }
-
-
-        console.log("Child Constructor");
-        console.log("Called (3)")
     }
 
-    componentDidMount(){
+    async componentDidMount(){
         // Used for API calls, just like useEffect() in functional components
-        console.log("Child Component Did Mount");
-        console.log("Called (5)");
+        const data = await fetch("https://api.github.com/users/Vaishalirawat1119");
+        const json = await data.json();
+
+        this.setState({
+            userInfo : json
+        });
     }
 
     render(){
-        const {name} = this.props; //destructuring
-        const {first, second} = this.state;
-
-        console.log("Child Render");
-        console.log("Called (4)");
+        const {name, location, bio, avatar_url} = this.state.userInfo; //destructuring
         return(
             <div className="user-card">
-                <h1><u>It is a class-based component</u></h1>
-                <h1>Count : {first}</h1>
-                <button onClick={() => {this.setState({first : this.state.first + 1})}}>Click Me</button>
-                {/* <h1>Count : {second}</h1> */}
-                <h2>Name : {name}</h2>
-                <h3>Location : Delhi</h3>
-                <h4>Email : rawatvaishali254@gmail.com</h4>
+                <img src={avatar_url}/>
+                <div className="user-info">
+                    <h2>Name : {name}</h2>
+                    <h3>Location : {location}</h3>
+                    <h4>Email : rawatvaishali254@gmail.com</h4>
+                    <h4>Bio : {bio}</h4>
+                </div>
             </div>
         );
     };

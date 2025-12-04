@@ -137,3 +137,22 @@
     padding: 10px;
     border: 1px solid black;
 }
+
+.user-card > img{
+    display: flex;
+    width: 200px;
+    height: 200px;
+}
+
+.user-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    width: 37%;
+    margin-left: 15rem;
+    margin-top: -15rem;
+    padding: 2rem;
+    line-height: 1rem;
+    /* background: red; */
+}

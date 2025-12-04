@@ -20,7 +20,7 @@ class About extends Component{
         return (
             <div>
                 <h1>About</h1>
-                <User name={"Vaishali Rawat (function)"}/>
+                {/* <User name={"Vaishali Rawat (function)"}/> */}
                 <UserClass name={"Vaishali Rawat (class-based)"}/>
             </div>
         )
