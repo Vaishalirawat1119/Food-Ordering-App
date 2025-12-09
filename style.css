@@ -157,3 +157,20 @@
     line-height: 1rem;
     /* background: red; */
 }
+
+.green-dot,
+.red-dot {
+  width: 20px;       /* required */
+  height: 20px;      /* required */
+  border-radius: 50%;
+  /* margin-top: 5px; */
+  display: inline-block; /* so it appears inside li */
+}
+
+.green-dot {
+  background-color: green;
+}
+
+.red-dot {
+  background-color: red;
+}
