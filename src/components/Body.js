@@ -30,25 +30,25 @@ const Body = () => {
         
 
     return listOfRestaurant.length === 0 ? <Shimmer/> : (
-        <div className="body">
-            <div className="filter">
-                <div className="search">
-                    <input type="text" className="search-box" value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
-                    <button onClick={() => {
+        <div className="bg-[#F6F0D7]">
+            <div className="flex items-center bg-[#C5D89D]">
+                <div>
+                    <input type="text" className="m-3 placeholder:text-gray-500 border-2 rounded" value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
+                    <button className="w-14 rounded hover:bg-[#F6F0D7] cursor-pointer" onClick={() => {
                         const filteredRestaurant = listOfRestaurant.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()))
                         setFilteredRestaurant(filteredRestaurant);
                     }}>
                         Search
                     </button>
                 </div>
-                <button className="filter-btn" onClick={() => {
+                <button className="mx-8 rounded w-[200] h-8 cursor-pointer hover:bg-[#F6F0D7]" onClick={() => {
                     const filteredList = listOfRestaurant.filter((res) => res.info.avgRating > 4);
                     setListOfRestaurant(filteredList)}}
                 >
                     Top Rated Restaurant
                 </button>
             </div>
-            <div className="restaurant-container">
+            <div className="flex flex-wrap">
                 {filteredRestaurant.map((restaurant) => (
                     <Link key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id} style={{ textDecoration: "none", color: "inherit" }}>
                     <RestaurantCard

@@ -8,27 +8,29 @@ const Header = () => {
     const onlineStatus = useOnlineStatus();
 
     return (
-        <div id="header">
-            <div id="logo-container">
-                <img className="logo" src={LOGO_URL}/>
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>
-                        Online Status : {onlineStatus ? (<span className="green-dot"></span>) : (<span className="red-dot"></span>)}
+        <div className="bg-[#F6F0D7] flex h-24 justify-between items-center">
+            <img className="w-24 h-24" src={LOGO_URL}/>
+                <ul className="flex">
+                    <li className="px-4">
+                        Online Status : {onlineStatus ? (<span className="inline-block w-5 h-5 rounded-full bg-green-500"></span>) : (<span className="inline-block w-5 h-5 rounded-full bg-red-500"></span>)}
                     </li>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About Us</Link></li>
-                    <li><Link to="/contact">Contact Us</Link></li>
-                    <li><Link to="/grocery">Grocery</Link></li>
-                    <li>Cart</li>
-                    <button className="login" onClick={() => {
-                        btnName === "Login" ? 
-                        setBtnName("Logout") : 
-                        setBtnName("Login")
-                    }}>{btnName}</button>
+                    <li className="px-4 hover:underline"><Link to="/">Home</Link></li>
+                    <li className="px-4 hover:underline"><Link to="/about">About Us</Link></li>
+                    <li className="px-4 hover:underline"><Link to="/contact">Contact Us</Link></li>
+                    <li className="px-4 hover:underline"><Link to="/grocery">Grocery</Link></li>
+                    <li className="px-4 hover:underline"><Link to="/cart">Cart</Link></li>
+                    <button className={`px-4 font-medium ${
+                        btnName === "Login" ? "text-green-500" : "text-red-500"
+                    }`}
+                    onClick={() => {
+                        btnName === "Login"
+                        ? setBtnName("Logout")
+                        : setBtnName("Login");
+                    }}
+                    >
+                        {btnName}
+                    </button>
                 </ul>
-            </div>
         </div>
     );
 };
