@@ -30,8 +30,8 @@ const Body = () => {
         
 
     return listOfRestaurant.length === 0 ? <Shimmer/> : (
-        <div className="bg-[#F6F0D7]">
-            <div className="flex items-center bg-[#C5D89D]">
+        <div>
+            <div className="flex items-center">
                 <div>
                     <input type="text" className="m-3 placeholder:text-gray-500 border-2 rounded" value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
                     <button className="w-14 rounded hover:bg-[#F6F0D7] cursor-pointer" onClick={() => {
