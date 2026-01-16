@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {discountSection} from "./RestaurantCard";
 import resObj from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
@@ -8,8 +8,11 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
     const [listOfRestaurant, setListOfRestaurant] = useState([]);
     const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+    console.log(listOfRestaurant);
 
     const [searchText, setSearchText] = useState("");
+
+    const RestaurantCardDiscound = discountSection(RestaurantCard);
 
     useEffect(() => {
         fetchData();
@@ -31,7 +34,7 @@ const Body = () => {
 
     return listOfRestaurant.length === 0 ? <Shimmer/> : (
         <div>
-            <div className="flex items-center">
+            <div className="flex items-center m-6">
                 <div>
                     <input type="text" className="m-3 placeholder:text-gray-500 border-2 rounded" value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
                     <button className="w-14 rounded hover:bg-[#F6F0D7] cursor-pointer" onClick={() => {
@@ -51,9 +54,11 @@ const Body = () => {
             <div className="flex flex-wrap">
                 {filteredRestaurant.map((restaurant) => (
                     <Link key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id} style={{ textDecoration: "none", color: "inherit" }}>
-                    <RestaurantCard
-                        resData={restaurant}
-                    />
+                    {restaurant.info?.aggregatedDiscountInfoV3 ? (
+                        <RestaurantCardDiscound resData={restaurant} />
+                    ) : (
+                        <RestaurantCard resData={restaurant} />
+                    )}
                     </Link>
                 ))}
             </div>
